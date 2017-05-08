@@ -14,3 +14,17 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::group(['prefix' => 'invoice'], function () {
+    Route::get('/', function () {
+        return 'Lista de Nf-e';
+    });
+
+    Route::get('new', function () {
+        return 'incluir Nf-e';
+    });
+
+    Route::get('{invoiceId}', function ($invoiceId) {
+        return "Visualizar/editar Nfe $invoiceId";
+    });
+});
